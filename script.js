@@ -37,3 +37,15 @@ function toggleMenu() {
         document.body.classList.add(theme);
     }
 });
+
+
+// Loading Animation
+window.addEventListener("load", () => {
+    const Loader = document.querySelector(".loader");
+
+    Loader.classList.add("loader-hidden");
+
+    Loader.addEventListener("transitionend", () => {
+        document.body.removeChild("loader");
+    })
+})
