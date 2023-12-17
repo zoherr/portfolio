@@ -55,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(150px);
+  backdrop-filter: blur(250px);
   /* background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%); */
   transition: opacity 10s, visibility 1.75s;
 }
@@ -71,7 +71,7 @@
   width: 175px;
   stroke: #4e5dc0;
   fill-opacity: 0;
-  stroke-width: 10px;
+  stroke-width: 7px;
   stroke-dasharray: 4500;
   animation: draw 8s ease;
 }
