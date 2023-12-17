@@ -55,9 +55,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(300px);
+  backdrop-filter: blur(85px);
   /* background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%); */
-transition: opacity 8.70s, visibility 8s;}
+transition: opacity 20S, visibility 1.75s;
+}
 
 .loader-hidden {
   opacity: 0;
@@ -72,7 +73,7 @@ transition: opacity 8.70s, visibility 8s;}
   fill-opacity: 0;
   stroke-width: 10px;
   stroke-dasharray: 4500;
-  animation: draw 8s ease;
+  animation: draw 5s ease;
 }
 
 @keyframes draw {
