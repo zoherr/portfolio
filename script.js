@@ -50,9 +50,10 @@ function toggleMenu() {
 //     })
 // })
 // Wait for the window to load
+// Wait for the window to load
 window.addEventListener("load", () => {
   // Find the loader element
-  const loader = document.querySelector(".loader");
+  const loader = document.querySelector(".loading-page");
 
   // Use GSAP to animate the loader out
   gsap.to(".loading-page", {
@@ -70,12 +71,12 @@ window.addEventListener("load", () => {
   );
 
   // Use GSAP to animate the loader itself
-  gsap.to(loader, {
+  gsap.to(loading-page, {
     opacity: 0,
     duration: 1.5,
     onComplete: () => {
       // Remove the loader element from the DOM after the animation is complete
-      document.body.removeChild(loader);
+      document.body.removeChild(loading-page);
     },
   });
 });
