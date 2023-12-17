@@ -55,8 +55,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);
-  transition: opacity 5s, visibility 1s;
+  background-color: #ffffff;
+  /* background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%); */
+  transition: opacity 10s, visibility 1.75s;
 }
 
 .loader-hidden {
