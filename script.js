@@ -52,32 +52,21 @@ function toggleMenu() {
 // Wait for the window to load
 // Wait for the window to load
 window.addEventListener("load", () => {
-  // Find the loader element
-  const loader = document.querySelector(".loading-page");
+  const loadingPage = document.querySelector(".loading-page");
+  const logoName = document.querySelector(".logo-name");
 
-  // Use GSAP to animate the loader out
-  gsap.to(".loading-page", {
-    opacity: 0,
-    display: "none",
-    duration: 1.5,
-    delay: 3.5,
-  });
+  // GSAP equivalent for ".loading-page" animation
+  loadingPage.style.transition = "opacity 1.5s ease 3.5s";
+  loadingPage.style.opacity = 0;
 
-  // Use GSAP to animate the logo
-  gsap.fromTo(
-    ".logo-name",
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 2, delay: 0.5 }
-  );
+  // GSAP equivalent for ".logo-name" animation
+  logoName.style.transition = "transform 2s ease 0.5s, opacity 2s ease 0.5s";
+  logoName.style.transform = "translateY(0)";
+  logoName.style.opacity = 1;
 
-  // Use GSAP to animate the loader itself
-  gsap.to(loading-page, {
-    opacity: 0,
-    duration: 1.5,
-    onComplete: () => {
-      // Remove the loader element from the DOM after the animation is complete
-      document.body.removeChild(loading-page);
-    },
+  // Remove loading page after animation
+  loadingPage.addEventListener("transitionend", () => {
+    document.body.removeChild(loadingPage);
   });
 });
 
