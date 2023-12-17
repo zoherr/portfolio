@@ -52,21 +52,40 @@ function toggleMenu() {
 // Wait for the window to load
 // Wait for the window to load
 window.addEventListener("load", () => {
-  const loadingPage = document.querySelector(".loading-page");
-  const logoName = document.querySelector(".logo-name");
+    const Loader = document.querySelector(".loader");
 
-  // GSAP equivalent for ".loading-page" animation
-  loadingPage.style.transition = "opacity 1.5s ease 3.5s";
-  loadingPage.style.opacity = 0;
+    Loader.classList.add("loader-hidden");
 
-  // GSAP equivalent for ".logo-name" animation
-  logoName.style.transition = "transform 2s ease 0.5s, opacity 2s ease 0.5s";
-  logoName.style.transform = "translateY(0)";
-  logoName.style.opacity = 1;
-
-  // Remove loading page after animation
-  loadingPage.addEventListener("transitionend", () => {
-    document.body.removeChild(loadingPage);
-  });
+    Loader.addEventListener("transitionend", () => {
+        document.body.removeChild(Loader); // Fix: pass the actual element to remove
+    });
 });
+
+window.addEventListener("load", () => {
+    const loadingPage = document.querySelector(".loading-page");
+    const logoName = document.querySelector(".logo-name");
+  
+    // GSAP equivalent for ".loading-page" animation
+    loadingPage.style.transition = "opacity 1.5s ease 3.5s";
+    loadingPage.style.opacity = 0;
+  
+    // GSAP equivalent for ".logo-name" animation
+    logoName.style.transition = "transform 2s ease 0.5s, opacity 2s ease 0.5s";
+    logoName.style.transform = "translateY(0)";
+    logoName.style.opacity = 1;
+  
+    // Remove loading page after animation
+    loadingPage.addEventListener("transitionend", () => {
+      document.body.removeChild(loadingPage);
+    });
+});
+
+// Assuming you have an element with class "loader"
+document.addEventListener("DOMContentLoaded", function () {
+    var loader = document.querySelector(".loader");
+
+    // Add the "loader-hidden" class to hide the loader and show the main content
+    loader.classList.add("loader-hidden");
+});
+
 
