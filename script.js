@@ -49,27 +49,34 @@ function toggleMenu() {
 //         document.body.removeChild("loader");
 //     })
 // })
-gsap.fromTo(
-    ".loading-page",
-    { opacity: 1 },
-    {
-      opacity: 0,
-      display: "none",
-      duration: 1.5,
-      delay: 3.5,
-    }
-  );
-  
+// Wait for the window to load
+window.addEventListener("load", () => {
+  // Find the loader element
+  const loader = document.querySelector(".loader");
+
+  // Use GSAP to animate the loader out
+  gsap.to(".loading-page", {
+    opacity: 0,
+    display: "none",
+    duration: 1.5,
+    delay: 3.5,
+  });
+
+  // Use GSAP to animate the logo
   gsap.fromTo(
     ".logo-name",
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 2,
-      delay: 0.5,
-    }
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 2, delay: 0.5 }
   );
+
+  // Use GSAP to animate the loader itself
+  gsap.to(loader, {
+    opacity: 0,
+    duration: 1.5,
+    onComplete: () => {
+      // Remove the loader element from the DOM after the animation is complete
+      document.body.removeChild(loader);
+    },
+  });
+});
+
