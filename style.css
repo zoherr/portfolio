@@ -67,11 +67,11 @@
 
 #svg {
     transform: rotate(90deg);
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
   stroke: #4e5dc0;
   fill-opacity: 0;
-  stroke-width: 3px;
+  stroke-width: 10px;
   stroke-dasharray: 4500;
   animation: draw 8s ease;
 }
