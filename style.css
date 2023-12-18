@@ -45,6 +45,20 @@
     transform: translateY(0) rotate(0deg);
   }
 } */
+/* Typing */
+#typing-container {
+    text-align: center;
+}
+
+#typing-text {
+    border-right: 2px solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    color: #363a45; 
+    display: inline-block;
+}
+
 
 .loader {
   position: fixed;
