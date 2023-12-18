@@ -88,4 +88,35 @@ document.addEventListener("DOMContentLoaded", function () {
     loader.classList.add("loader-hidden");
 });
 
+//Typing Animation
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const textElement = document.getElementById('typing-text');
+    const originalText = textElement.innerText;
+
+    function type() {
+        let charIndex = 0;
+        const textToType = originalText;
+
+        function typeCharacter() {
+            const currentText = textToType.slice(0, ++charIndex);
+            textElement.innerText = currentText;
+
+            if (charIndex < textToType.length) {
+                setTimeout(typeCharacter, 100); // Adjust the typing speed (milliseconds)
+            } else {
+                // Restart the typing animation after a brief delay
+                charIndex = 0;
+                setTimeout(typeCharacter, 2000); // Adjust the delay before restart (milliseconds)
+            }
+        }
+
+        // Start typing after an initial delay
+        setTimeout(typeCharacter, 1800); // Adjust the initial delay before starting (milliseconds)
+    }
+
+    // Start the typing animation
+    type();
+});
